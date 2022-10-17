@@ -1,5 +1,5 @@
 import React from 'react';
-import JoinGame from './joingame';
+import TournamentEntry from '../features/tournament-entry';
 import ChessGame from '../features/chess/ui/chessgame';
 
 /**
@@ -32,7 +32,7 @@ class JoinRoom extends React.Component {
       <React.Fragment>
         {this.state.didGetUserName ? (
           <React.Fragment>
-            <JoinGame userName={this.state.inputText} isCreator={false} />
+            <TournamentEntry userName={this.state.inputText} isCreator={false} />
             <ChessGame myUserName={this.state.inputText} />
           </React.Fragment>
         ) : (

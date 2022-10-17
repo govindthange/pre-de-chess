@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-const socket = require('../connection/socket').socket;
+const socket = require('../../connection/socket').socket;
+// import SocketClient from '../utils/socketClient';
 
 /**
  * 'Join game' is where we actually join the game room.
@@ -24,13 +25,14 @@ const JoinGameRoom = (gameid, userName, isCreator) => {
   socket.emit('playerJoinGame', idData);
 };
 
-const JoinGame = props => {
+const TournamentEntry = props => {
   /**
    * Extract the 'gameId' from the URL.
    * the 'gameId' is the gameRoom ID.
    */
   const {gameid} = useParams();
   JoinGameRoom(gameid, props.userName, props.isCreator);
+  // SocketClient.emitEvent(gameid, props.userName, props.isCreator);
   return (
     <div>
       <h1 style={{textAlign: 'center'}}>Decentralized Chess - Play to earn!</h1>
@@ -41,8 +43,14 @@ const JoinGame = props => {
         </a>
         .
       </h3>
+      <h3 style={{textAlign: 'center'}}>
+        <a href="./" target="_blank">
+          New Game
+        </a>
+        .
+      </h3>
     </div>
   );
 };
 
-export default JoinGame;
+export default TournamentEntry;
