@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
-import JoinRoom from './onboard/joinroom';
+import TournamentEntry from './features/tournament-entry';
 import {ColorContext} from './context/colorcontext';
 import Onboard from './onboard/onboard';
 import Header from './layouts/header';
@@ -64,7 +64,7 @@ function App() {
                 <ChessGame myUserName={userName} />
               </React.Fragment>
             ) : (
-              <JoinRoom />
+              <TournamentEntry />
             )}
           </Route>
           <Redirect to="/" />

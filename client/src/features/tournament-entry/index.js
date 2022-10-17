@@ -1,51 +1,78 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
-import {socket} from '../../utils/socket';
+import Header from '../../layouts/header';
+import ChessGame from '../chess/ui/chessgame';
 
 /**
- * 'Join game' is where we actually join the game room.
+ * Onboard is where we create the game room.
  */
 
-const TournamentEntry = props => {
-  /**
-   * Extract the 'gameId' from the URL.
-   * the 'gameId' is the gameRoom ID.
-   */
-  const {gameid} = useParams();
+class TournamentEntry extends React.Component {
+  state = {
+    didGetUserName: false,
+    inputText: ''
+  };
 
-  /**
-   * For this browser instance, we want
-   * to join it to a gameRoom. For now
-   * assume that the game room exists
-   * on the backend.
-   *
-   *
-   * TODO: handle the case when the game room doesn't exist.
-   */
-  socket.emit('playerJoinGame', {
-    gameId: gameid,
-    userName: props.userName,
-    isCreator: props.isCreator
-  });
+  constructor(props) {
+    super(props);
+    this.textArea = React.createRef();
+  }
 
-  return (
-    <div>
-      <h1 style={{textAlign: 'center'}}>Decentralized Chess - Play to earn!</h1>
-      <h3 style={{textAlign: 'center'}}>
-        A game demonstrating various blockchain capabilities. Checkout its{' '}
-        <a href="https://github.com/govindthange/de-chess" target="_blank">
-          sourcode
-        </a>
-        .
-      </h3>
-      <h3 style={{textAlign: 'center'}}>
-        <a href="./" target="_blank">
-          New Game
-        </a>
-        .
-      </h3>
-    </div>
-  );
-};
+  typingUserName = () => {
+    // grab the input text from the field from the DOM
+    const typedText = this.textArea.current.value;
+
+    // set the state with that text
+    this.setState({
+      inputText: typedText
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        {this.state.didGetUserName ? (
+          <React.Fragment>
+            <Header userName={this.state.inputText} isCreator={false} />
+            <ChessGame myUserName={this.state.inputText} />
+          </React.Fragment>
+        ) : (
+          <div>
+            <h1 style={{textAlign: 'center', marginTop: String(window.innerHeight / 3) + 'px'}}>
+              Your Username:
+            </h1>
+
+            <input
+              style={{
+                marginLeft: String(window.innerWidth / 2 - 120) + 'px',
+                width: '240px',
+                marginTop: '62px'
+              }}
+              ref={this.textArea}
+              onInput={this.typingUserName}></input>
+
+            <button
+              className="btn btn-primary"
+              style={{
+                marginLeft: String(window.innerWidth / 2 - 60) + 'px',
+                width: '120px',
+                marginTop: '62px'
+              }}
+              disabled={!(this.state.inputText.length > 0)}
+              onClick={() => {
+                // When the 'Submit' button gets pressed from the username screen,
+                // We should send a request to the server to create a new room with
+                // the uuid we generate here.
+                this.setState({
+                  didGetUserName: true
+                });
+              }}>
+              Submit
+            </button>
+          </div>
+        )}
+      </React.Fragment>
+    );
+  }
+}
 
 export default TournamentEntry;
