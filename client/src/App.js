@@ -4,7 +4,7 @@ import JoinRoom from './onboard/joinroom';
 import {ColorContext} from './context/colorcontext';
 import Onboard from './onboard/onboard';
 import JoinGame from './onboard/joingame';
-import ChessGame from './chess/ui/chessgame';
+import ChessGame from './features/chess/ui/chessgame';
 
 /*
  *  Frontend flow:

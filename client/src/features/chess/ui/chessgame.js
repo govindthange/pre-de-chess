@@ -2,15 +2,15 @@ import React from 'react';
 import Game from '../model/chess';
 import Square from '../model/square';
 import {Stage, Layer} from 'react-konva';
-import Board from '../../assets/images/chessboard.png';
+import Board from '../../../assets/images/chessboard.jpg';
 import useSound from 'use-sound';
-import chessMove from '../../assets/media/chess-move.mp3';
+import chessMove from '../../../assets/media/chess-move.mp3';
 import Piece from './piece';
 import piecemap from './piecemap';
 import {useParams} from 'react-router-dom';
-import {ColorContext} from '../../context/colorcontext';
-import VideoChatApp from '../../connection/videochat';
-const socket = require('../../connection/socket').socket;
+import {ColorContext} from '../../../context/colorcontext';
+import VideoChatApp from '../../../connection/videochat';
+const socket = require('../../../connection/socket').socket;
 
 class ChessGame extends React.Component {
   state = {
