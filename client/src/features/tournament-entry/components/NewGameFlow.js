@@ -1,13 +1,13 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import uuid from 'uuid/v4';
-import {ColorContext} from '../context/colorcontext';
-const socket = require('../utils/socket').socket;
+import {ColorContext} from '../../../context/colorcontext';
+const socket = require('../../../utils/socket').socket;
 
 /**
- * Onboard is where we create the game room.
+ * NewGameFlow is where we create the game room.
  */
-class CreateNewGame extends React.Component {
+class NewGameForm extends React.Component {
   state = {
     didGetUserName: false,
     inputText: '',
@@ -102,10 +102,10 @@ class CreateNewGame extends React.Component {
   }
 }
 
-const Onboard = props => {
+const NewGameFlow = props => {
   const color = React.useContext(ColorContext);
 
-  return <CreateNewGame didRedirect={color.playerDidRedirect} setUserName={props.setUserName} />;
+  return <NewGameForm didRedirect={color.playerDidRedirect} setUserName={props.setUserName} />;
 };
 
-export default Onboard;
+export default NewGameFlow;

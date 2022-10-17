@@ -3,7 +3,7 @@ import Header from '../../layouts/header';
 import ChessGame from '../chess/ui/chessgame';
 
 /**
- * Onboard is where we create the game room.
+ * NewGameFlow is where we create the game room.
  */
 
 class TournamentEntry extends React.Component {

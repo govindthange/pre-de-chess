@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import TournamentEntry from './features/tournament-entry';
 import {ColorContext} from './context/colorcontext';
-import Onboard from './onboard/onboard';
+import NewGameFlow from './features/tournament-entry/components/NewGameFlow';
 import Header from './layouts/header';
 import ChessGame from './features/chess/ui/chessgame';
 
@@ -55,7 +55,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Onboard setUserName={setUserName} />
+            <NewGameFlow setUserName={setUserName} />
           </Route>
           <Route path="/game/:gameid" exact>
             {didRedirect ? (
