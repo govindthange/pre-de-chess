@@ -1,13 +1,13 @@
 import React from 'react';
 import useSound from 'use-sound';
-import chessMove from '../../../assets/media/chess-move.mp3';
+import chessMove from '../../assets/media/chess-move.mp3';
 import {useParams} from 'react-router-dom';
-import {ColorContext} from '../../../context/colorcontext';
-import VideoChat from '../../video-chat';
-import {Chessboard} from '../components/Chessboard';
-export const socket = require('../../../utils/socket').socket;
+import {ColorContext} from '../../context/colorcontext';
+import VideoChat from '../video-chat';
+import {Chessboard} from './components/Chessboard';
+export const socket = require('../../utils/socket').socket;
 
-const ChessGameWrapper = props => {
+const Tournament = props => {
   /**
    * player 1
    *      - socketId 1
@@ -138,4 +138,4 @@ const ChessGameWrapper = props => {
   );
 };
 
-export default ChessGameWrapper;
+export default Tournament;

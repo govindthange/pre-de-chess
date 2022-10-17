@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../layouts/header';
-import ChessGame from '../chess/ui/chessgame';
+import Tournament from '../tournament';
 
 /**
  * NewGameFlow is where we create the game room.
@@ -33,7 +33,7 @@ class TournamentEntry extends React.Component {
         {this.state.didGetUserName ? (
           <React.Fragment>
             <Header userName={this.state.inputText} isCreator={false} />
-            <ChessGame myUserName={this.state.inputText} />
+            <Tournament myUserName={this.state.inputText} />
           </React.Fragment>
         ) : (
           <div>

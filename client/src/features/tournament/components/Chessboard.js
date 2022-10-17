@@ -4,8 +4,8 @@ import Square from '../model/square';
 import {Stage, Layer} from 'react-konva';
 import Board from '../../../assets/images/chessboard-default.png';
 import ChessPiece from './ChessPiece';
-import piecemap from '../ui/piecemap';
-import {socket} from '../ui/chessgame';
+import ChessPieceMap from '../model/ChessPieceMap';
+import {socket} from '..';
 
 export class Chessboard extends React.Component {
   state = {
@@ -195,7 +195,7 @@ export class Chessboard extends React.Component {
                           <ChessPiece
                             x={square.getCanvasCoord()[0]}
                             y={square.getCanvasCoord()[1]}
-                            imgurls={piecemap[square.getPiece().name]}
+                            imgurls={ChessPieceMap[square.getPiece().name]}
                             isWhite={square.getPiece().color === 'white'}
                             draggedPieceTargetId={this.state.draggedPieceTargetId}
                             onDragStart={this.startDragging}

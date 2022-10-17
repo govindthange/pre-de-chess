@@ -4,7 +4,7 @@ import TournamentEntry from './features/tournament-entry';
 import {ColorContext} from './context/colorcontext';
 import NewGameFlow from './features/tournament-entry/components/NewGameFlow';
 import Header from './layouts/header';
-import ChessGame from './features/chess/ui/chessgame';
+import Tournament from './features/tournament';
 
 /*
  *  Frontend flow:
@@ -61,7 +61,7 @@ function App() {
             {didRedirect ? (
               <React.Fragment>
                 <Header userName={userName} isCreator={true} />
-                <ChessGame myUserName={userName} />
+                <Tournament myUserName={userName} />
               </React.Fragment>
             ) : (
               <TournamentEntry />
