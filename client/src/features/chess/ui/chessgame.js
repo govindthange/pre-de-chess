@@ -5,7 +5,7 @@ import {Stage, Layer} from 'react-konva';
 import Board from '../../../assets/images/chessboard-default.png';
 import useSound from 'use-sound';
 import chessMove from '../../../assets/media/chess-move.mp3';
-import Piece from './piece';
+import ChessPiece from '../components/ChessPiece';
 import piecemap from './piecemap';
 import {useParams} from 'react-router-dom';
 import {ColorContext} from '../../../context/colorcontext';
@@ -198,7 +198,7 @@ class ChessGame extends React.Component {
                     {row.map(square => {
                       if (square.isOccupied()) {
                         return (
-                          <Piece
+                          <ChessPiece
                             x={square.getCanvasCoord()[0]}
                             y={square.getCanvasCoord()[1]}
                             imgurls={piecemap[square.getPiece().name]}
