@@ -1,13 +1,18 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-const socket = require('../../connection/socket').socket;
-// import SocketClient from '../utils/socketClient';
+import {socket} from '../../utils/socket';
 
 /**
  * 'Join game' is where we actually join the game room.
  */
 
-const JoinGameRoom = (gameid, userName, isCreator) => {
+const TournamentEntry = props => {
+  /**
+   * Extract the 'gameId' from the URL.
+   * the 'gameId' is the gameRoom ID.
+   */
+  const {gameid} = useParams();
+
   /**
    * For this browser instance, we want
    * to join it to a gameRoom. For now
@@ -17,22 +22,12 @@ const JoinGameRoom = (gameid, userName, isCreator) => {
    *
    * TODO: handle the case when the game room doesn't exist.
    */
-  const idData = {
+  socket.emit('playerJoinGame', {
     gameId: gameid,
-    userName: userName,
-    isCreator: isCreator
-  };
-  socket.emit('playerJoinGame', idData);
-};
+    userName: props.userName,
+    isCreator: props.isCreator
+  });
 
-const TournamentEntry = props => {
-  /**
-   * Extract the 'gameId' from the URL.
-   * the 'gameId' is the gameRoom ID.
-   */
-  const {gameid} = useParams();
-  JoinGameRoom(gameid, props.userName, props.isCreator);
-  // SocketClient.emitEvent(gameid, props.userName, props.isCreator);
   return (
     <div>
       <h1 style={{textAlign: 'center'}}>Decentralized Chess - Play to earn!</h1>

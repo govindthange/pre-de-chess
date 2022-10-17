@@ -9,8 +9,8 @@ import Piece from './piece';
 import piecemap from './piecemap';
 import {useParams} from 'react-router-dom';
 import {ColorContext} from '../../../context/colorcontext';
-import VideoChatApp from '../../../connection/videochat';
-const socket = require('../../../connection/socket').socket;
+import VideoChatApp from '../../../utils/videochat';
+const socket = require('../../../utils/socket').socket;
 
 class ChessGame extends React.Component {
   state = {
