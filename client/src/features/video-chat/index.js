@@ -1,7 +1,8 @@
+import './index.css';
 import React, {useEffect, useState, useRef} from 'react';
 import Peer from 'simple-peer';
 import styled from 'styled-components';
-const socket = require('./socket').socket;
+const socket = require('../../utils/socket').socket;
 
 const Container = styled.div`
   height: 100vh;
@@ -17,7 +18,7 @@ const Video = styled.video`
   border: 1px solid blue;
 `;
 
-function VideoChatApp(props) {
+function VideoChat(props) {
   /**
    * initial state: both player is neutral and have the option to call each other
    *
@@ -116,8 +117,8 @@ function VideoChatApp(props) {
     mainView = (
       <div>
         <h1>{props.opponentUserName} is calling you</h1>
-        <button onClick={acceptCall}>
-          <h1>Accept</h1>
+        <button className="chat-btn" onClick={acceptCall}>
+          Accept
         </button>
       </div>
     );
@@ -130,10 +131,11 @@ function VideoChatApp(props) {
   } else {
     mainView = (
       <button
+        className="chat-btn"
         onClick={() => {
           callPeer(props.opponentSocketId);
         }}>
-        <h1>Chat with your friend while you play!</h1>
+        Chat while playing...
       </button>
     );
   }
@@ -148,4 +150,4 @@ function VideoChatApp(props) {
   );
 }
 
-export default VideoChatApp;
+export default VideoChat;

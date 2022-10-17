@@ -1,0 +1,7 @@
+.chat-btn {
+  padding: 10px;
+  border: none;
+}
+.chat-btn:hover {
+  background: lightgray;
+}

@@ -55,7 +55,7 @@ const Header = props => {
         </h3>
         <h3 style={{textAlign: 'center'}}>
           <a href="./" target="_blank">
-            New Game
+            Click here to start a new game!
           </a>
           .
         </h3>
