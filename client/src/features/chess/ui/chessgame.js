@@ -2,7 +2,7 @@ import React from 'react';
 import Game from '../model/chess';
 import Square from '../model/square';
 import {Stage, Layer} from 'react-konva';
-import Board from '../../../assets/images/chessboard.jpg';
+import Board from '../../../assets/images/chessboard-default.png';
 import useSound from 'use-sound';
 import chessMove from '../../../assets/media/chess-move.mp3';
 import Piece from './piece';

@@ -1,0 +1,1 @@
+- Click on [chessboard.jpg](https://www.postermywall.com/index.php/posterbuilder/copy/69a169900f91c32d6debcf7c7310f298) to edit chessboard image.

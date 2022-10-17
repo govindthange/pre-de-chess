@@ -33,19 +33,11 @@ const JoinGame = props => {
   JoinGameRoom(gameid, props.userName, props.isCreator);
   return (
     <div>
-      <h1 style={{textAlign: 'center'}}>Play to earn decentralized chess!</h1>
+      <h1 style={{textAlign: 'center'}}>Decentralized Chess - Play to earn!</h1>
       <h3 style={{textAlign: 'center'}}>
-        Made with ❤️ by{' '}
-        <a href="https://github.com/govindthange" target="_blank">
-          Govind Thange
-        </a>
-        . Connect me at my{' '}
-        <a href="https://www.linkedin.com/in/govindt/" target="_blank">
-          network
-        </a>
-        . Checkout my{' '}
-        <a href="https://www.linkedin.com/in/govindt/" target="_blank">
-          work
+        A game demonstrating various blockchain capabilities. Checkout its{' '}
+        <a href="https://github.com/govindthange/de-chess" target="_blank">
+          sourcode
         </a>
         .
       </h3>
