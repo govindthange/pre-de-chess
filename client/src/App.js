@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 import JoinRoom from './onboard/joinroom';
 import {ColorContext} from './context/colorcontext';
 import Onboard from './onboard/onboard';
-import TournamentEntry from './features/tournament-entry';
+import Header from './layouts/header';
 import ChessGame from './features/chess/ui/chessgame';
 
 /*
@@ -60,7 +60,7 @@ function App() {
           <Route path="/game/:gameid" exact>
             {didRedirect ? (
               <React.Fragment>
-                <TournamentEntry userName={userName} isCreator={true} />
+                <Header userName={userName} isCreator={true} />
                 <ChessGame myUserName={userName} />
               </React.Fragment>
             ) : (
