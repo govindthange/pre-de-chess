@@ -1,0 +1,43 @@
+{
+	"name": "Web 3.0 Client",
+	"service": "client",
+	"shutdownAction": "none",
+	"dockerComposeFile": [
+		"../../docker-compose-client.yml",
+		// Uncomment the following two lines to execute the application in integrated mode.
+		"../../docker-compose-app.yml",
+		"../../docker-compose-dapp.yml",
+		"../../docker-compose.yml"
+	],
+
+	// Open the sub-folder with the source code
+	"workspaceFolder": "/workspace/client",
+	"runArgs": [
+		// "--cap-add=SYS_PTRACE",
+		// "--security-opt",
+		// "seccomp=unconfined"
+	],
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"dsznajder.es7-react-js-snippets",
+		"planbcoding.vscode-react-refactor",
+		"streetsidesoftware.code-spell-checker",
+		"vincaslt.highlight-matching-tag",
+		"formulahendry.auto-rename-tag",
+		"coenraads.bracket-pair-colorizer-2",
+		"naumovs.color-highlight"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [8080],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}
