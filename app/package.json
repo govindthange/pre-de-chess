@@ -1,7 +1,7 @@
 {
-  "name": "chess-game-backend",
+  "name": "de-chess-server",
   "version": "1.0.0",
-  "description": "Backend portion of my multi-player chess game",
+  "description": "de-Chess Server",
   "main": "index.js",
   "scripts": {
     "test": "test",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProjectsByJackHe/multiplayer-chess-game-backend.git"
+    "url": "git+https://github.com/govindthange/de-chess.git"
   },
   "dependencies": {
     "express": "4.17.1",
@@ -19,10 +19,10 @@
   "devDependencies": {
     "nodemon": "2.0.4"
   },
-  "author": "Jack He",
-  "license": "MIT",
+  "author": "Govind Thange",
+  "license": "GPL v3.0",
   "bugs": {
-    "url": "https://github.com/ProjectsByJackHe/multiplayer-chess-game-backend/issues"
+    "url": "https://github.com/govindthange/kit/issues"
   },
-  "homepage": "https://github.com/ProjectsByJackHe/multiplayer-chess-game-backend#readme"
+  "homepage": "https://github.com/govindthange/kit#readme"
 }
